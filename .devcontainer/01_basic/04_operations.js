@@ -32,3 +32,18 @@ console.log(`a=${a}  b=${b}`)
 let x=4
 let y=++x
 console.log(`x=${x} y=${y}`)
+
+console.log('2'>1)
+console.log("02">=1)
+
+
+console.log(null>0)
+console.log(null==0)
+console.log(null>=0)
+// the reason for the output of the above code is because  when we do operation of gt equal to or lt equal to then the null is converted to 0.
+
+
+// === this is for strict checking 
+
+console.log('1'== 1)
+console.log('1'=== 1)
