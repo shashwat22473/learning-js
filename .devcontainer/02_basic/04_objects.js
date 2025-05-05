@@ -51,3 +51,16 @@ console.log(Object.entries(tinderUser))
 
 // hasOwnProperty tells whether the method has this property or not
 console.log(tinderUser.hasOwnProperty('DOB'))
+
+
+
+// destructure a object
+const course={
+    coursename:"js in hindi",
+    price:"000",
+    courseInstructor:"Hitesh"
+}
+// this just takes the course name out of the course object and then
+const {coursename : instructor}=courseInstructor
+
+console.log(instructor)
