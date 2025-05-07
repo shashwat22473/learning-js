@@ -90,3 +90,31 @@ arr.forEach(ding)
 arr.forEach((value,index,arr)=>{
     console.log(value,index,arr)
 })
+
+
+// filter-> tell the elements in the array that satisfy the callback function
+
+
+const nums=[1,2,3,4,5]
+
+let list = nums.filter((element) =>{
+    if (element>2)return true
+    else  return false
+})
+
+console.log(list)
+
+
+const nuum=[1,2,3,4,5,6,7,8,9,10]
+const  newnuums=nuum.map((ele => {return ele+10}))
+
+console.log(newnuums)
+
+
+// chaining , this is just applying multiple filters and map in succession , just to look cool
+
+const arrayy= newnuums.map(ele=>{return ele*10})
+                    .map(ele=>{return ele+4})
+                    .filter((ele)=>ele>45)
+
+console.log(arrayy)
