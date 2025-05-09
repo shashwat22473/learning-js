@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+
+    </head>
+
+    <body style="background-color: #212121; color: white;">
+    </body>
+
+    <script>
+        // learn about adding elements in a webpage using DOM manipulation
+        let div=document.createElement('div')
+        console.log(div)
+        div.className= "main"
+        div.id=Math.round(Math.random()*10+1) 
+
+        div.setAttribute("title","title1")
+        div.style.backgroundColor="Orange"
+        div.style.padding="12px"
+
+        div.innerText="Hello my friends !!"
+
+        const ranText=document.createTextNode(" Shashwat Shekhar")
+        div.appendChild(ranText)
+
+        document.body.appendChild(div)
+    </script>
+</html>

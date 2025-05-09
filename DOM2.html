@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            DOM | Chai aur Code
+        </title>
+
+        <style>
+            .bg{
+                background-color:#212121 ;
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body class="bg">
+        <div class="Parent">
+            <!-- This is just a comment -->
+            <div class="days">Monday</div>
+            <div class="days">Tuesday</div>
+            <div class="days">Wednesday</div>
+            <div class="days">thursday</div>
+            
+        </div>
+    </body>
+
+    <script>
+        const parent = document.querySelector('.Parent')
+        console.log(parent);
+        console.log(parent.children);
+        console.log(parent.children[0].innerHTML)
+
+
+        for(let i=0;i<parent.children.length;i++){
+            const element=parent.children[i]
+            element.style.backgroundColor="green"
+        }
+
+        console.log(parent.firstElementChild.innerHTML)
+        console.log(parent.lastElementChild.innerHTML)
+
+        const dayOne=document.querySelector(".days")
+        // console.log(dayOne)
+
+        // console.log(dayOne.parentElement)
+        // console.log(dayOne.nextElementSibling)
+
+        console.log(parent.childNodes)
+        // reads newline character as a text
+    </script>
