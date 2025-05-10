@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    // setting an event on an element
+    // this is not preferred , allows only single listner and also not flexible
+
+
+    // document.getElementById("owl").onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+
+    // this is preferred , allows multiple listner and also flexible
+
+    // document.getElementById('owl').addEventListener('click', (e)=>{
+    //     alert("owl clicked again")
+    //     console.log(e)
+    // },false)
+
+
+    // false is default , it represent bubbling events , true is capturing.
+
+    // there are many important attributes in the event , that can help us to understand and manipulate DOM
+    // type, timestamp, preventDefault
+    //target,toElement,srcElement,currentTarget
+    //clientX,clientY,screenX,screenY
+    //altKey, ctrlKey,shiftKey,keyCode
+
+
+    // Event-propogation-tells whether the event goes from child ->parent  or vice-versa.
+    // This becomes important when we apply events on many 2 elements  when one element contains other.
+
+
+    // when we give event-propogation that are on the contrary then we follow the event propogation rule of the one who is heirarically superior
+    // document.querySelector("#owl").addEventListener('click', (e) => {
+        //     console.log('clicked owl')
+        //     // helps to stop the propogation of the event ,can stop the event to not go to parent if bubbling.
+        //     e.stopPropagation()
+        // }, false)
+        
+        
+        // // prevent default behaviour of a element 
+        // document.querySelector("#google").addEventListener('click',(e)=>{
+    //     e.preventDefault()
+    // })
+    
+    document.querySelector("#images").addEventListener('click', (e) => {
+        console.log('clicked in ul')
+        if (e.target.tagName==='IMG'){
+            const obj=e.target.parentElement
+            // the reason why we use the parentElement for image is because
+            // the parent element of the image that we clicked is a <li> 
+            // and we want to delete the whole <li> element that would include
+            // the bullet as well
+            obj.remove()
+        }
+    })
+</script>
+
+</html>
