@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="background-color: #212121; color: white;">
+        <button class="start">
+            start
+        </button>
+
+        <button class="stop">
+            stop
+        </button>
+        
+    </body>
+
+<script>
+
+    const haha=null
+
+    clearInterval(haha)
+
+    document.querySelector('.start').addEventListener('click',(e)=>{
+        
+        if (haha===null){
+            // if we do not add this then multiple intervals will open
+            haha= setInterval(() => {
+            console.log('Shashwat', Date())
+            
+            }, 2000);
+        }
+
+    })
+    document.querySelector('.stop').addEventListener('click',(e)=>{
+        if (haha!=null){clearInterval(haha)}
+
+    })
+
+
+
+</script>
+</html>

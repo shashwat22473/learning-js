@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <h1>Learning Coding with Hitesh</h1>
+
+
+    <button class="stop">Stop</button>
+</body>
+
+<script>
+    const timeOut= setTimeout(()=>{
+        console.log("timeout function reached")
+        document.querySelector("h1").innerText="Coding with Chai aur Code"
+    },2000)
+
+    document.querySelector('.stop').addEventListener('click',(e)=>{
+        console.log("timeout stopped")
+        clearTimeout(timeOut)
+    })
+
+</script>
+</html>
